@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>开始编写文章</title>
+        <link rel="stylesheet" th:href="@{/examples/css/style.css}" />
+        <link rel="stylesheet" th:href="@{/css/editormd.css}" />
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>编写</h1>
+            </header>
+            <div id="test-editormd">
+                <label>
+<textarea style="display:none;">
+</textarea>
+                </label>
+            </div>
+        </div>
+        <script th:src="@{/examples/js/jquery.min.js}"></script>
+        <script th:src="@{/editormd.min.js}"></script>
+        <script type="text/javascript">
+			var testEditor;
+
+            $(function() {
+                testEditor = editormd("test-editormd", {
+                    width   : "90%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    path    : "../lib/"
+                });
+                
+                /*
+                // or
+                testEditor = editormd({
+                    id      : "test-editormd",
+                    width   : "90%",
+                    height  : 640,
+                    path    : "../lib/"
+                });
+                */
+            });
+        </script>
+    </body>
+</html>
